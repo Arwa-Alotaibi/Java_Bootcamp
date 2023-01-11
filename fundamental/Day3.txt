@@ -1,0 +1,255 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello world!");
+
+        //break jump
+        // continue // ignore
+
+        Scanner input = new Scanner(System.in);
+        Scanner SString = new Scanner(System.in);
+
+//
+//        for(int i = 0 ; i<=100 ; i++){
+//            if(i%2==1){
+//                continue;
+//                // ignore odd number
+//
+//            }
+//
+//            System.out.println(i);
+//        }
+
+
+        //1.Write a program that prints the numbers from 1 to 100 such that:
+       // If the number is a multiple of 3, you need to print "Fizz" instead of that number.
+       // If the number is a multiple of 5, you need to print "Buzz" instead of that number.
+        //If the number is a multiple of both 3 and 5, you need to print "FizzBuzz" instead of that number.
+
+        for (int number= 1 ; number<=100 ; number++){
+            if(number%3==0 && number%5==0){
+                System.out.println("FizzBuzz" +" :"+ number);
+            }
+            else if(number%3==0){
+                System.out.println("Fizz"+" "+number);
+            }
+            else if(number%5==0){
+                System.out.println("Buzz"+" "+number);
+            }
+
+
+        }
+
+//        //2.Write a Java program to reverse a string.
+//        //Test Data: Input a string: The quick brown fox Expected Output: Reverse string: xof nworb kciuq ehT
+       System.out.println("Enter a string :");
+        String input_string = input.nextLine();
+        String reverse = "";
+        for(int i =0 ; i <input_string.length();i++){
+            char extract_letter = input_string.charAt(i);
+             reverse =   extract_letter +reverse  ;
+
+        }
+        System.out.println(reverse);
+
+
+
+        //3.Write a program that prompts the user to input a positive integer.
+        // It should then print the multiplication table of that number.
+        System.out.println("Enter a number :");
+        int number = input.nextInt();
+        for(int i =1 ; i<=10 ; i++ ){
+            if (number < 0){
+                System.out.println("please enter a positvie integer ! ");
+                //break;
+            }
+
+            System.out.println(number * i);
+        }
+
+
+        //4.Write a program to find the factorial value of any number entered through the keyboard.
+        System.out.println("Enter number:");
+        int num = input.nextInt();
+        int factorial = 1 ;
+
+        for(int i =1 ; i<=num ; i++){
+
+            factorial = factorial *i;
+
+        }
+        System.out.println(factorial);
+
+        //5.Two numbers are entered through the keyboard.
+        // Write a program to find the value of one number raised to the power of another. (Do not use Java built-in method)
+
+        System.out.println("etner a first number: :)");
+
+        int first_number = input.nextInt();
+        System.out.println("etner a secound  number: :)");
+        int secound_number = input.nextInt();
+        int power=1 ;
+        for(int i =1 ; i<=secound_number ; i++){
+            power = power *first_number;
+        }
+        System.out.println(power);
+
+
+
+
+
+
+
+
+
+        //6.Write a program that reads a set of integers, and then prints the sum of the even and odd integers.
+
+        int odd = 0 ;
+        int even = 0 ;
+        int integers=1 ;
+
+        while ( integers > 0){
+
+          System.out.println("etner a set of number if you  want stop enter -1 :)");
+            integers = input.nextInt();
+
+                if(integers%2==0){
+                    even = even +integers ;
+
+                } else if (integers%2==1) {
+                    odd = odd +integers;
+                }
+            integers++;
+
+            }
+        System.out.println("The sum of even is:"+""+ even);
+        System.out.println("The sum of odd is:"+""+ odd);
+
+
+
+        //7.Write a program that prompts the user to input a positive integer.
+        // It should then output a message indicating whether the number is a prime number.
+
+       System.out.println("Enter number :");
+      int number = input.nextInt();
+      int counter=0;
+       if (number < 0){
+            System.out.println("please enter a positvie integer ! ");
+       }
+      for(int i =2 ; i<number ; i++ ){
+
+            if(number %i==0){
+                counter++;
+           }
+
+        }
+        if(counter>=2){
+            System.out.println("is not prime number :"+number);
+        }
+        else if(counter==0) {
+            System.out.println("is a  prime number :"+number);
+
+        }
+
+
+
+
+
+
+
+      // 8.Write a program to enter the numbers till the user wants and
+       // at the end it should display the count of positive, negative and zeros entered.
+
+        int count_positvite = 0 ;
+        int count_negative = 0 ;
+        int count_zeros=0;
+        int numbers ;
+
+
+
+        String  check_user_want="yes" ;
+
+        while (check_user_want=="yes" ){
+
+            System.out.println("please enter number: ");
+            numbers = input.nextInt();
+
+            if(numbers > 0){
+                count_positvite = count_positvite+1;
+            } else if (numbers <0) {
+                count_negative= count_negative+1;
+            }
+
+            else if(numbers ==0){
+               count_zeros = count_zeros+1;
+            }
+
+
+                System.out.println("If you want to stop enter no or continue yse :) : ");
+                 String c = SString.nextLine();
+
+                 if(c.equals("no")){
+                    break;
+                 }
+                 
+
+        }
+
+        System.out.println("the count of positvie:" +" "+ count_positvite);
+
+        System.out.println("the count of negtive:" +" "+ count_negative);
+
+        System.out.println("the count of zeros:" +" "+ count_zeros);
+
+
+
+//        //9.Use a for loop to print headings for four weeks (Weeks 1 - 4).
+//        // Then use another for loop to print the days (Days 1 -7) for each week.
+       for(int weeks =1; weeks<=4 ; weeks++){
+            System.out.println("Week: "+""+ weeks);
+           for(int days=1 ; days <=7 ;days++ ){
+                System.out.println("Days:"+""+ days);
+            }
+            System.out.println("--");
+
+
+        }
+
+
+
+//       // 10.Write a program thats check if the word is a palindrome or not.
+//        // hint: A string is said to be a palindrome if it is the same if we start reading it from left to right or right to left.
+//
+        System.out.println("Enter a String to check a palindrome :");
+        String word = SString.nextLine();
+       String reverse ="";
+
+       for(int i = word.length()-1 ; i>=0 ; i--){
+            char r= word.charAt(i);
+
+          reverse = reverse + r ;
+       }
+
+           if(word.equals(reverse)){
+               System.out.println("palindrome");
+           }
+            else if(!word.equals(reverse)){
+               System.out.println("is not palindrome");
+
+            }
+
+           // example
+
+        // word  = hello  reverse =  0lleh
+
+
+
+
+
+
+
+
+    }
+
+    }
